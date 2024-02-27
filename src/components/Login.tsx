@@ -30,6 +30,8 @@ const Login: React.FC = () => {
     email: string;
     password: string;
   }
+  // console.log(FormikProps);
+
   return (
     <Box w={{ base: "100vw", sm: "100vw", md: "100vw", lg: "65vw" }}>
       <Header />
@@ -44,11 +46,32 @@ const Login: React.FC = () => {
           lg: `calc(100vh - 72px)`,
         }}
       >
-        <Flex direction={"column"} alignItems={"center"} h={"70%"}>
+        <Flex
+          direction={"column"}
+          alignItems={{
+            base: "center",
+            sm: "flex-start",
+            md: "center",
+            lg: "center",
+          }}
+          justify={{
+            base: "center",
+            sm: "flex-start",
+            md: "center",
+            lg: "space-around",
+          }}
+          h={{ base: "80%", sm: "60%", md: "80%", lg: "75%" }}
+          mb={{ base: "120px", md: 0, lg: "0" }}
+        >
           <Flex
             direction={"column"}
-            justify={"space-evenly"}
-            h={"30%"}
+            justify={{
+              base: "space-evenly",
+              sm: "space-between",
+              md: "space-around",
+              lg: "space-around",
+            }}
+            h={{ base: "25%", sm: "30%", md: "30%", lg: "35%" }}
             alignItems={"center"}
           >
             <Heading
@@ -60,34 +83,28 @@ const Login: React.FC = () => {
             <Text fontSize={{ base: "lg", md: "xl", lg: "2xl" }}>
               Login using social networks
             </Text>
-            {/* Correct Button Styling #Roundness */}
             <Stack direction={"row"} spacing={{ md: 4, lg: 6 }}>
               <IconButton
                 aria-label="facebook"
                 bgColor={"#48546E"}
                 color={"#fff"}
-                // fontSize={50}
-                // fontSize={{ sm: 24, lg: 28, xl: 28 }}
-                borderRadius={60}
-                // size={"lg"}
-                size={{ base: "lg", sm: "lg", md: "lg", lg: "lg" }}
-                icon={<FaFacebookF size={18} />}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
+                icon={<FaFacebookF />}
               />
               <IconButton
                 aria-label="google plus"
-                fontSize={{ sm: 24, lg: 28, xl: 28 }}
-                borderRadius={{ sm: 22, md: 24, lg: 24 }}
-                size={{ base: "sm", sm: "sm", lg: "lg", xl: "lg" }}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
+                fontSize={28}
                 bgColor={"#E64B2F"}
                 color={"#fff"}
                 icon={<FaGooglePlusG />}
               />
               <IconButton
                 aria-label="linked in"
-                fontSize={{ sm: 24, lg: 28, xl: 28 }}
-                borderRadius={60}
-                // borderRadius={{ sm: 22, md: 24, lg: 28, xl: 32 }}
-                size={{ base: "sm", sm: "sm", md: "sm", lg: "lg", xl: "lg" }}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
                 bgColor={"#48546E"}
                 color={"#fff"}
                 icon={<FaLinkedinIn size={18} />}
@@ -96,7 +113,8 @@ const Login: React.FC = () => {
           </Flex>
           <Flex
             direction={"column"}
-            w={{ base: "100%", sm: "100%", lg: "70%" }}
+            w={{ base: "100%", sm: "100%", lg: "66%" }}
+            h={{ lg: "60%" }}
           >
             <Box position="relative" py="6">
               <Divider />

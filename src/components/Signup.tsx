@@ -42,16 +42,32 @@ const Signup: React.FC = () => {
       >
         <Flex
           direction={"column"}
-          alignItems={"center"}
-          // justify={"space-around"}
-          h={"70%"}
-          // bgColor={"palevioletred"}
+          alignItems={{
+            base: "center",
+            sm: "flex-start",
+            md: "center",
+            lg: "center",
+          }}
+          justify={{
+            base: "center",
+            sm: "flex-start",
+            md: "center",
+            lg: "space-around",
+          }}
+          h={{ base: "80%", sm: "60%", md: "80%", lg: "75%" }}
+          mb={{ base: "120px", md: 0, lg: "0" }}
         >
           <Flex
             direction={"column"}
-            justify={"space-evenly"}
-            h={"30%"}
+            justify={{
+              base: "space-evenly",
+              sm: "space-between",
+              md: "space-around",
+              lg: "space-around",
+            }}
+            h={{ base: "25%", sm: "30%", md: "30%", lg: "35%" }}
             alignItems={"center"}
+            // bgColor={"ghostwhite"}
           >
             <Heading
               size={{ base: "xl", sm: "2xl", md: "2xl", lg: "3xl" }}
@@ -65,29 +81,27 @@ const Signup: React.FC = () => {
             <Stack direction={"row"} spacing={4}>
               <IconButton
                 aria-label="facebook"
-                borderRadius={24}
                 bgColor={"#48546E"}
                 color={"#fff"}
-                fontSize={28}
-                size={{ base: "sm", sm: "sm", lg: "lg", xl: "lg" }}
-                icon={<FaFacebookF size={18} />}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
+                icon={<FaFacebookF />}
               />
               <IconButton
                 aria-label="google plus"
-                borderRadius={24}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
                 fontSize={28}
-                size={{ base: "sm", sm: "sm", lg: "lg", xl: "lg" }}
                 bgColor={"#E64B2F"}
                 color={"#fff"}
                 icon={<FaGooglePlusG />}
               />
               <IconButton
                 aria-label="linked in"
-                borderRadius={24}
-                fontSize={28}
+                boxSize={{ base: "40px", sm: "50px", md: "60px", lg: "62px" }}
+                borderRadius={{ base: 30, sm: 26, md: 30, lg: 32 }}
                 bgColor={"#48546E"}
                 color={"#fff"}
-                size={{ base: "sm", sm: "sm", lg: "lg", xl: "lg" }}
                 icon={<FaLinkedinIn size={18} />}
               />
             </Stack>
@@ -95,6 +109,7 @@ const Signup: React.FC = () => {
           <Flex
             direction={"column"}
             w={{ base: "100%", sm: "100%", lg: "66%" }}
+            h={{ lg: "60%" }}
           >
             <Box position="relative" py="6">
               <Divider />

@@ -8,7 +8,7 @@ const Header: React.FC = () => {
       direction={{ base: "column", sm: "column", md: "column", lg: "row" }}
       justify={{ base: "center", sm: "center", md: "center", lg: "flex-start" }}
       mt={4}
-      ml={6}
+      ml={{ base: "", sm: "", md: "", lg: 6 }}
     >
       <Icon as={FaReact} boxSize={14} mr={2} />
       <Heading fontWeight={300}>Diprella</Heading>
